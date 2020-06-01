@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Recruit from '../views/Recruit.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/recruit',
+    name: 'Recruit',
+    component: Recruit
   },
   {
     path: '/about',
@@ -25,5 +31,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.push(sessionStorage.getItem('PagesQueryPathParams'))
 
 export default router
